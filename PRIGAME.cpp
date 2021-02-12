@@ -33,45 +33,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll n;
-        cin >> n;
-        vs str;
-        string sentence, word;
-        char ch, cch;
-        while ((ch = getchar()) != '\n')
+        ll x, y;
+        cin >> x >> y;
+        ll n = 1;
+        // Fo(i, 1, x + 1)
+        // {
+        //     n *= i;
+        // }
+        if (x == 1)
         {
-            sentence += ch;
+            cout << "Chef";
+            br;
         }
-        sentence += ' ';
-        fo(i, sentence.length())
+        else
         {
-            cch = sentence[i];
-            if (cch == ' ')
-            {
-                str.push_back(word);
-                word = "";
-            }
-            else
-            {
-                word += cch;
-            }
+            cout << "Divyam";
+            br;
         }
-        int arr[26] = {0};
-        fo(i, n)
-        {
-            arr[(int)str[i][0] - 97]++;
-        }
-        vs temp;
-        fo(i, n)
-        {
-            if (arr[str[i][0] - 97] == 1)
-            {
-                temp.push_back(str[i]);
-            }
-        }
-        int ans = temp.size();
-        cout << ans * (ans - 1);
-        br;
     }
     return 0;
 }
